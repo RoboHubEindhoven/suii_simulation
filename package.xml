@@ -66,7 +66,6 @@
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-    <gazebo_ros gazebo_model_path="${prefix}/urdf"/>
-    <gazebo_ros plugin_path="${prefix}/include/suii_simulation/rotating_table_plugin/build" gazebo_media_path="${prefix}" />
+    <gazebo_ros plugin_path="${prefix}/include/suii_simulation/rotating_table_plugin/build"/>
   </export>
 </package>
