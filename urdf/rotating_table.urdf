@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot name="myfirst">
+<!--Base link-->
+  <link name="base_link">
+    <collision>
+      <geometry>
+        <cylinder length="0.08" radius="0.8"/>
+      </geometry>
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+    </collision>
+
+    <visual>
+      <geometry>
+        <cylinder length="0.08" radius="0.8"/>
+      </geometry>
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0.04" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+<!--Tabletop-->
+  <link name="table">
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="1"/>
+      </geometry>
+        <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+    </collision>
+
+    <visual>
+      <geometry>
+        <cylinder length="0.02" radius="1"/>
+      </geometry>
+        <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 -0.01" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <joint name="rotation" type="continuous">
+    <parent link="base_link"/>
+    <child link="table"/>
+    <origin xyz="0 0 0.1"/> <!--This Z origin is the table height-->
+    <axis xyz="0 0 1"/>
+  </joint>
+
+    <gazebo reference="base_link">
+        <static>true</static>
+    </gazebo>
+</robot>

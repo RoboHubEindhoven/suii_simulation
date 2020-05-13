@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="extra_gazebo_args" default="--verbose" />
+    </include>
+
+    <node name="rotating_table" pkg="suii_simulation" type="rotating_table.py"/>
+</launch>
