@@ -61,6 +61,11 @@
   </joint>
 
     <gazebo reference="base_link">
-        <static>true</static>
+      <static>true</static>
     </gazebo>
+
+    <gazebo>
+      <plugin name="rotating_table_plugin" filename="librotating_table_plugin.so"/>
+    </gazebo>
+
 </robot>
