@@ -2,10 +2,23 @@
 
 <launch>
     
+    <arg name="node_start_delay" default="1.0" />  
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="extra_gazebo_args" default="--verbose" />
     </include>
 
-    <node name="rotating_table" pkg="suii_simulation" type="rotating_table.py"/>
+    <node name="rotating_table" pkg="suii_simulation" type="rotating_table.py" />
+
+    <node name="spawn_urdf_object" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 0.5 -y 0.5 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 4040B"/>
+
+    <node name="spawn_urdf_object_2" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F20_20_G.urdf -urdf -x 1.5 -y 0.6 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 2020G"/>
+
+    <node name="spawn_urdf_object_3" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.9 -y 0.3 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 4040G"/>
+
+    <node name="spawn_urdf_object_4" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F20_20_B.urdf -urdf -x 1 -y 1.8 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 2020B"/>
 </launch>
