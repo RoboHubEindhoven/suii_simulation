@@ -445,6 +445,98 @@
     <parent link="ur3/wrist_3_link"/>
     <child link="ur3/tool0"/>
   </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0 -0.044877 0.105" rpy="0 -1.57079632679 1.57079632679"/>
+    <parent link="ur3/tool0"/>
+    <child link="camera_placeholder"/>
+  </joint>
+
+  <link name="camera_placeholder">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.005 0.005 0.005"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.005 0.005 0.005"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <mass value="0.001" />
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001" />
+    </inertial>
+  </link>
+
+  <gazebo reference="camera_placeholder">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="camera">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>suii/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_placeholder</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Green</material>
+    <static>true</static>
+  </gazebo>
+
+  <gazebo reference="wheel_right_front">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="wheel_right_back">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="wheel_left_front">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="wheel_left_back">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="lidar_front">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo reference="lidar_back">
+    <material>Gazebo/Orange</material>
+  </gazebo>
   <!-- gripper -->
   <!--
   <xacro:include filename="$(find urdf_tutorial_adding)/urdf/gripper.urdf" />
