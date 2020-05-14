@@ -67,5 +67,6 @@
   <export>
     <!-- Other tools can request additional information be placed here -->
     <gazebo_ros plugin_path="${prefix}/include/suii_simulation/rotating_table_plugin/build"/>
+    <gazebo_ros plugin_path="${prefix}/include/suii_simulation/ur3_plugin/build"/>
   </export>
 </package>

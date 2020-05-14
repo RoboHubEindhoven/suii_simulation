@@ -14,11 +14,14 @@
     args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 0.5 -y 0.5 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 4040B"/>
 
     <node name="spawn_urdf_object_2" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F20_20_G.urdf -urdf -x 1.5 -y 0.6 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 2020G"/>
+    args="-file $(find suii_simulation)/urdf/F20_20_G.urdf -urdf -x 1.5 -y 0.6 -z 0.1 -R 0 -P -1.57079632679 -Y 1 -model 2020G"/>
 
     <node name="spawn_urdf_object_3" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.9 -y 0.3 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 4040G"/>
+    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.9 -y 0.3 -z 0.1 -R 0 -P -1.57079632679 -Y 1.8 -model 4040G"/>
 
     <node name="spawn_urdf_object_4" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F20_20_B.urdf -urdf -x 1 -y 1.8 -z 0.1 -R 0 -P -1.57079632679 -Y 0 -model 2020B"/>
+    args="-file $(find suii_simulation)/urdf/F20_20_B.urdf -urdf -x 1 -y 1.8 -z 0.1 -R 0 -P -1.57079632679 -Y 2.4 -model 2020B"/>
+
+    <node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/suii.urdf -urdf -x -0.33 -y 1 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
 </launch>
