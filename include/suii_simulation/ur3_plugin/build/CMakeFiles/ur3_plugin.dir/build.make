@@ -75,17 +75,17 @@ include CMakeFiles/ur3_plugin.dir/progress.make
 include CMakeFiles/ur3_plugin.dir/flags.make
 
 CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o: CMakeFiles/ur3_plugin.dir/flags.make
-CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o: ur3_plugin.cc
+CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o: ../ur3_plugin.cc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o -c /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ur3_plugin.cc
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.o -c /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ur3_plugin.cc
 
 CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ur3_plugin.cc > CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ur3_plugin.cc > CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.i
 
 CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ur3_plugin.cc -o CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ur3_plugin.cc -o CMakeFiles/ur3_plugin.dir/ur3_plugin.cc.s
 
 # Object files for target ur3_plugin
 ur3_plugin_OBJECTS = \

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ur3_plugin.cc
+/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ur3_plugin.cc
 gazebo/gazebo.hh
 -
 gazebo/physics/physics.hh
@@ -14,13 +14,13 @@ gazebo/physics/physics.hh
 thread
 -
 ros/ros.h
-/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ros/ros.h
+/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ros/ros.h
 ros/callback_queue.h
-/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ros/callback_queue.h
+/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ros/callback_queue.h
 ros/subscribe_options.h
-/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/ros/subscribe_options.h
+/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/ros/subscribe_options.h
 sensor_msgs/JointState.h
-/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/build/sensor_msgs/JointState.h
+/home/remco/catkin_ws/src/suii_simulation/include/suii_simulation/ur3_plugin/sensor_msgs/JointState.h
 
 /opt/ros/melodic/include/ros/advertise_options.h
 ros/forwards.h
