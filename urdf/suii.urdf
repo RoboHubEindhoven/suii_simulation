@@ -5,6 +5,16 @@
     <plugin name="ur3_plugin" filename="libur3_plugin.so"/>
   </gazebo>
 
+  <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20.0</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
   <link name="base_link">
     <inertial>
       <origin rpy="0 0 0" xyz="0.00291234070014007 -1.66533453693773E-16 0.108047440506087"/>
@@ -539,6 +549,7 @@
   <gazebo reference="lidar_back">
     <material>Gazebo/Orange</material>
   </gazebo>
+
   <!-- gripper -->
   <!--
   <xacro:include filename="$(find urdf_tutorial_adding)/urdf/gripper.urdf" />
