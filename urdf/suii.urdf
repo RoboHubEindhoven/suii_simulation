@@ -18,7 +18,7 @@
   <gazebo reference="lidar_front">
     <sensor type="ray" name="lidar_front">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <update_rate>20</update_rate>
       <ray>
         <scan>
@@ -54,7 +54,7 @@
   <gazebo reference="lidar_back">
     <sensor type="ray" name="lidar_back">
       <pose>0 0 0 0 0 0</pose>
-      <visualize>true</visualize>
+      <visualize>false</visualize>
       <update_rate>20</update_rate>
       <ray>
         <scan>
