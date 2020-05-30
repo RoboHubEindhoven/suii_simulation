@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-
+  <arg name="node_start_delay" default="1.0" />  
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
   <arg name="paused" default="false"/>
   <arg name="use_sim_time" default="true"/>
@@ -44,5 +44,8 @@
   <group if="$(arg gui)">
     <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="$(arg output)" args="$(arg command_arg3)"/>
   </group>
+
+  <node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/suii_without_collision.urdf -urdf -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
 
 </launch>
