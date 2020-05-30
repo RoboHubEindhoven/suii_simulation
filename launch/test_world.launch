@@ -48,4 +48,23 @@
   <node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
     args="-file $(find suii_simulation)/urdf/suii_without_collision.urdf -urdf -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
 
+  <include file="$(find suii_manipulation)/ur3_suii.launch"> 
+    <arg name="robot_ip" value="localhost"/>
+  </include>
+  
+  <node name="manipulation" pkg="suii_manipulation" type="Manipulation.py" />
+  <node name="rviz" pkg="rviz" type="rviz" />
+
+  <include file="$(find timed_roslaunch)/timed_roslaunch.launch">
+    <arg name="time" value="5" />
+    <arg name="pkg" value="suii_simulation" />
+    <arg name="file" value="base.launch" />
+    <arg name="node_name" value="timed_roslaunch_1" />
+  </include>
+  <include file="$(find timed_roslaunch)/timed_roslaunch.launch">
+    <arg name="time" value="5" />
+    <arg name="pkg" value="suii_simulation" />
+    <arg name="file" value="navigation.launch" />
+    <arg name="node_name" value="timed_roslaunch_2" />
+  </include>
 </launch>
