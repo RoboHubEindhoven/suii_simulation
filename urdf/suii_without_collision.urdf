@@ -534,16 +534,68 @@
 
   <gazebo reference="wheel_right_front">
     <material>Gazebo/Red</material>
+      <collision>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collsion>
   </gazebo>
+  
   <gazebo reference="wheel_right_back">
     <material>Gazebo/Red</material>
+      <collision>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collsion>
   </gazebo>
+
   <gazebo reference="wheel_left_front">
     <material>Gazebo/Red</material>
+      <collision>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collsion>
   </gazebo>
+
   <gazebo reference="wheel_left_back">
     <material>Gazebo/Red</material>
+      <collision>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collsion>
   </gazebo>
+
   <gazebo reference="lidar_front">
     <material>Gazebo/Orange</material>
   </gazebo>
