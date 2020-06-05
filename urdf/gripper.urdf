@@ -1,0 +1,414 @@
+<robot
+  name="gripper">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000314385625916895 -0.0110896096035867 -0.0421598850024997"
+        rpy="0 0 0" />
+      <mass
+        value="1.15466628725613" />
+      <inertia
+        ixx="0.00103353968597952"
+        ixy="-7.91796963434665E-06"
+        ixz="4.82839117797138E-06"
+        iyy="0.000848364176880939"
+        iyz="-0.000235749466056584"
+        izz="0.000667207579525162" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="servo_link">
+    <inertial>
+      <origin
+        xyz="3.58979339309951E-16 0.0122205346294046 -6.93889390390723E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00361974305546616" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/servo_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/servo_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="servo"
+    type="continuous">
+    <origin
+      xyz="-0.02175 0.01426 -0.0285"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="servo_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rightTilted_link">
+    <inertial>
+      <origin
+        xyz="0.0362280758621729 -0.00440456680250059 -0.00401068190727637"
+        rpy="0 0 0" />
+      <mass
+        value="0.034397394962144" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/rightTilted_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/rightTilted_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightTilted"
+    type="continuous">
+    <origin
+      xyz="-0.04625 0.0035 -0.041"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rightTilted_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rightStraight_ink">
+    <inertial>
+      <origin
+        xyz="0.031803880095001 -0.00383013954258074 -0.00624412256539431"
+        rpy="0 0 0" />
+      <mass
+        value="0.0412389600755427" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/rightStraight_ink.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/rightStraight_ink.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightStraight"
+    type="continuous">
+    <origin
+      xyz="-0.02125 0.0035 -0.061"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="rightStraight_ink" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fingerRightLeft_link">
+    <inertial>
+      <origin
+        xyz="0.00267701171751486 -3.57353036051222E-16 -0.00353142500094274"
+        rpy="0 0 0" />
+      <mass
+        value="0.0360851632485204" />
+      <inertia
+        ixx="5.73730897263212E-06"
+        ixy="5.17734697967733E-20"
+        ixz="-2.49725703207321E-06"
+        iyy="6.82428070693948E-06"
+        iyz="1.18946663877336E-19"
+        izz="1.08697173430736E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/fingerRightLeft_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/fingerRightLeft_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fingerRightLeft_link2"
+    type="continuous">
+    <origin
+      xyz="0.083548 0 -0.010487"
+      rpy="0 0 0" />
+    <parent
+      link="rightStraight_ink" />
+    <child
+      link="fingerRightLeft_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leftStraight_link">
+    <inertial>
+      <origin
+        xyz="-0.0317914966065302 -0.00383013974586561 -0.00630685637830356"
+        rpy="0 0 0" />
+      <mass
+        value="0.0412389650707455" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/leftStraight_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/leftStraight_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftStraight"
+    type="continuous">
+    <origin
+      xyz="0.02125 0.0035 -0.061"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftStraight_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="leftTilted_link">
+    <inertial>
+      <origin
+        xyz="-0.0362280758621757 -0.00440456680250058 -0.00401068190727924"
+        rpy="0 0 0" />
+      <mass
+        value="0.0343973949621441" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/leftTilted_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/leftTilted_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftTilted"
+    type="continuous">
+    <origin
+      xyz="0.04625 0.0035 -0.041"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="leftTilted_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fingerLeftLeft_link">
+    <inertial>
+      <origin
+        xyz="-0.00256530007946196 0 -0.00350460540950224"
+        rpy="0 0 0" />
+      <mass
+        value="0.0360851632485204" />
+      <inertia
+        ixx="5.70407821437543E-06"
+        ixy="1.34709832417505E-21"
+        ixz="2.55912194503496E-06"
+        iyy="6.85222255662068E-06"
+        iyz="-3.00257446443943E-21"
+        izz="1.14814434224524E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/fingerLeftLeft_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://suii_simulation/meshes/fingerLeftLeft_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fingerLeftLeft"
+    type="continuous">
+    <origin
+      xyz="-0.058548 0 -0.030487"
+      rpy="0 0 0" />
+    <parent
+      link="leftTilted_link" />
+    <child
+      link="fingerLeftLeft_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

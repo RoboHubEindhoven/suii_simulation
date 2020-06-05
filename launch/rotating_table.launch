@@ -23,5 +23,5 @@
     args="-file $(find suii_simulation)/urdf/F20_20_B.urdf -urdf -x 1 -y 1.8 -z 0.1 -R 0 -P -1.57079632679 -Y 2.4 -model 2020B"/>
 
     <node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/suii.urdf -urdf -x -0.33 -y 1 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
+    args="-file $(find suii_simulation)/urdf/suii_without_collision.urdf -urdf -x -0.33 -y 1 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
 </launch>
