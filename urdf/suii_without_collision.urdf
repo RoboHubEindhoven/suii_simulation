@@ -945,6 +945,7 @@
 
   <gazebo reference="base_link">
     <material>Gazebo/Green</material>
+    <kinematic>true</kinematic>
   </gazebo>
 
   <gazebo reference="wheel_right_front">
