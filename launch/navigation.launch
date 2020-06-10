@@ -1,6 +1,6 @@
 <launch>
-  <arg name="map_obstacle" default="Test"/>
-  <arg name="map_amcl" default="Test"/>
+  <arg name="map_obstacle" default="robocup_obs"/>
+  <arg name="map_amcl" default="robocup_amcl"/>
 
   <!-- Run the map server -->
   <node name="map_server" pkg="map_server" type="map_server" args="/home/remco/catkin_ws/src/suii_simulation/maps/$(arg map_obstacle).yaml">
