@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    
+    <arg name="node_start_delay" default="1.0" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="extra_gazebo_args" default="--verbose" />
+    </include>
+
+    <!--<node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/suii.urdf -urdf -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 -model suii"/>-->
+
+    <param name="table1" command="$(find xacro)/xacro '$(find suii_simulation)/urdf/table.urdf.xacro' height:=0.05"/>
+    <param name="table2" command="$(find xacro)/xacro '$(find suii_simulation)/urdf/table.urdf.xacro' height:=0.1"/>
+    <param name="table3" command="$(find xacro)/xacro '$(find suii_simulation)/urdf/table.urdf.xacro' height:=0.15"/>
+
+    <node name="spawn_table1" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-param table1 -urdf -model table1 -x 0 -y 0 -z 0 -R 0 -P 0 -Y 0 "/>
+    <node name="spawn_table2" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-param table2 -urdf -model table2 -x 1 -y 0 -z 0 -R 0 -P 0 -Y 0 "/>
+    <node name="spawn_table3" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
+    args="-param table3 -urdf -model table3 -x 2 -y 0 -z 0 -R 0 -P 0 -Y 0 "/>
+
+</launch>
