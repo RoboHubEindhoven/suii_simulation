@@ -498,13 +498,14 @@
       <mass
         value="1.15466628725613" />
       <inertia
-        ixx="0.00103353968597952"
-        ixy="-7.91796963434665E-06"
-        ixz="4.82839117797138E-06"
-        iyy="0.000848364176880939"
-        iyz="-0.000235749466056584"
-        izz="0.000667207579525162" />
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
     <visual>
       <origin
         xyz="0 0 0"
@@ -528,8 +529,8 @@
           filename="package://suii_simulation/meshes/base_link.STL" />
       </geometry>
     </collision>
-  </link>
-  <link
+  </link> 
+  <link 
     name="servo_link">
     <inertial>
       <origin
@@ -545,6 +546,7 @@
         iyz="0"
         izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
     <visual>
       <origin
         xyz="0 0 0"
@@ -581,7 +583,7 @@
       link="servo_link" />
     <axis
       xyz="0 1 0" />
-  </joint>
+  </joint> 
   <link
     name="rightTilted_link">
     <inertial>
@@ -598,6 +600,8 @@
         iyz="0"
         izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -651,6 +655,8 @@
         iyz="0"
         izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -697,13 +703,15 @@
       <mass
         value="0.0360851632485204" />
       <inertia
-        ixx="5.73730897263212E-06"
-        ixy="5.17734697967733E-20"
-        ixz="-2.49725703207321E-06"
-        iyy="6.82428070693948E-06"
-        iyz="1.18946663877336E-19"
-        izz="1.08697173430736E-06" />
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -757,6 +765,8 @@
         iyz="0"
         izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -810,6 +820,8 @@
         iyz="0"
         izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -856,13 +868,15 @@
       <mass
         value="0.0360851632485204" />
       <inertia
-        ixx="5.70407821437543E-06"
-        ixy="1.34709832417505E-21"
-        ixz="2.55912194503496E-06"
-        iyy="6.85222255662068E-06"
-        iyz="-3.00257446443943E-21"
-        izz="1.14814434224524E-06" />
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
     </inertial>
+    <self_collide>True</self_collide>
+
     <visual>
       <origin
         xyz="0 0 0"
@@ -900,6 +914,38 @@
     <axis
       xyz="0 1 0" />
   </joint>
+
+  <gazebo>
+ 	 <plugin name="mimic1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+	    <joint>leftTilted</joint>
+	    <mimicJoint>leftStraight</mimicJoint>
+      <multiplier>1</multiplier>
+	 </plugin>
+  </gazebo>
+
+  <gazebo>
+ 	 <plugin name="mimic2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+	    <joint>rightTilted</joint>
+	    <mimicJoint>rightStraight</mimicJoint>
+      <multiplier>1</multiplier>
+	 </plugin>
+  </gazebo>
+
+  <gazebo>
+ 	 <plugin name="mimic3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+	    <joint>leftTilted</joint>
+	    <mimicJoint>fingerLeftLeft</mimicJoint>
+            <multiplier>-1</multiplier>
+	 </plugin>
+  </gazebo>
+
+  <gazebo>
+ 	 <plugin name="mimic4" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+	    <joint>rightTilted</joint>
+	    <mimicJoint>fingerRightLeft_link2</mimicJoint>
+      <multiplier>1</multiplier>
+	 </plugin>
+  </gazebo>
 
   <gazebo reference="camera_placeholder">
   <sensor name="camera" type="depth">

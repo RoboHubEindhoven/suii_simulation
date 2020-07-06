@@ -54,7 +54,7 @@
         <arg name="node_name" value="timed_roslaunch_1" />
     </include>
 
-    <node pkg="tf" type="static_transform_publisher" name="object_tf" args="2.65 0.4 0.26 0.7071068 0.7071068 0 0 map S40_40_B 100" />
+    <node pkg="tf" type="static_transform_publisher" name="object_tf" args="2.65 0.4 0.16 0 0 0 1 map S40_40_B 100" />
 
     <node name="navigation" pkg="suii_navigation" type="manager.py" />
 </launch>
