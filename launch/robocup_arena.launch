@@ -3,6 +3,7 @@
 <launch>
 
     <arg name="node_start_delay" default="1.0" />
+    <arg name="node_start_delay2" default="3.0" />
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="extra_gazebo_args" default="--verbose" />
@@ -34,7 +35,7 @@
     args="-param table4 -urdf -model table4 -x 2.6 -y 1.5 -z 0 -R 0 -P 0 -Y 1.57079632679 "/>
 
     <node name="spawn_urdf_object" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 2.65 -y 0.4 -z 0.06 -R 0 -P 1.57079632679 -Y 0 -model 4040B"/>
+    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 2.65 -y 0.4 -z 0.06 -R 0 -P 0 -Y 0 -model S40_40_B"/>
 
     <node name="spawn_suii" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-file $(find suii_simulation)/urdf/suii_without_collision.urdf -urdf -x 1.5 -y 1.5 -z 0 -R 0 -P 0 -Y 0 -model suii"/>
@@ -54,7 +55,17 @@
         <arg name="node_name" value="timed_roslaunch_1" />
     </include>
 
-    <node pkg="tf" type="static_transform_publisher" name="object_tf" args="2.65 0.4 0.16 0 0 0 1 map S40_40_B 100" />
+    <node name="spawn_urdf_object1" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 2.65 -y 0.4 -z 0.5 -R 0 -P 0 -Y 0 -model S40_40_B"/>
+    <node name="tf_4040B" pkg="suii_simulation" type="object_tf_publisher.py"
+        args="-model S40_40_B">
+    </node>
+
+    <node name="spawn_urdf_object2" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.4 -y 1 -z 0.9 -R 0 -P 0 -Y 1 -model S40_40_G"/>
+    <node name="tf_4040G" pkg="suii_simulation" type="object_tf_publisher.py"
+        args="-model S40_40_G">
+    </node>
 
     <node name="navigation" pkg="suii_navigation" type="manager.py" />
 </launch>
