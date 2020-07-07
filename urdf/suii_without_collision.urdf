@@ -505,7 +505,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
     <visual>
       <origin
         xyz="0 0 0"
@@ -546,7 +545,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
     <visual>
       <origin
         xyz="0 0 0"
@@ -573,7 +571,7 @@
   </link>
   <joint
     name="servo"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.02175 0.01426 -0.0285"
       rpy="0 0 3.1416" />
@@ -600,8 +598,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -628,7 +624,7 @@
   </link>
   <joint
     name="rightTilted"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.04625 0.0035 -0.041"
       rpy="0 0 3.1416" />
@@ -640,7 +636,7 @@
       xyz="0 1 0" />
   </joint>
   <link
-    name="rightStraight_ink">
+    name="rightStraight_link">
     <inertial>
       <origin
         xyz="0.031803880095001 -0.00383013954258074 -0.00624412256539431"
@@ -655,8 +651,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -683,14 +677,14 @@
   </link>
   <joint
     name="rightStraight"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.02125 0.0035 -0.061"
       rpy="0 0 3.1416" />
     <parent
       link="gripper" />
     <child
-      link="rightStraight_ink" />
+      link="rightStraight_link" />
     <axis
       xyz="0 1 0" />
   </joint>
@@ -710,8 +704,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -738,12 +730,12 @@
   </link>
   <joint
     name="fingerRightLeft_link2"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.083548 0 -0.010487"
       rpy="0 0 0" />
     <parent
-      link="rightStraight_ink" />
+      link="rightStraight_link" />
     <child
       link="fingerRightLeft_link" />
     <axis
@@ -765,8 +757,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -793,7 +783,7 @@
   </link>
   <joint
     name="leftStraight"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.02125 0.0035 -0.061"
       rpy="0 0 3.1416" />
@@ -820,8 +810,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -848,7 +836,7 @@
   </link>
   <joint
     name="leftTilted"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="0.04625 0.0035 -0.041"
       rpy="0 0 3.1416" />
@@ -875,8 +863,6 @@
         iyz="0"
         izz="0" />
     </inertial>
-    <self_collide>True</self_collide>
-
     <visual>
       <origin
         xyz="0 0 0"
@@ -903,7 +889,7 @@
   </link>
   <joint
     name="fingerLeftLeft"
-    type="continuous">
+    type="fixed">
     <origin
       xyz="-0.058548 0 -0.030487"
       rpy="0 0 0" />
