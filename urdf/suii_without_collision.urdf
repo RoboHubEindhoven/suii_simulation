@@ -947,7 +947,7 @@
 	 </plugin>
   </gazebo>
 
-  <gazebo reference="camera_placeholder">
+  <!--<gazebo reference="camera_placeholder">
   <sensor name="camera" type="depth">
     <update_rate>10</update_rate>
     <camera>
@@ -987,7 +987,7 @@
       <hackBaseline>0</hackBaseline>
     </plugin>
   </sensor>
-  </gazebo>
+  </gazebo>-->
 
   <gazebo reference="base_link">
     <material>Gazebo/Green</material>

@@ -56,15 +56,21 @@
     </include>
 
     <node name="spawn_urdf_object1" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 2.65 -y 0.4 -z 0.5 -R 0 -P 0 -Y 0 -model S40_40_B"/>
+    args="-file $(find suii_simulation)/urdf/F40_40_B.urdf -urdf -x 2.65 -y 0.4 -z 0.5 -R 0 -P 0 -Y 1 -model S40_40_B"/>
     <node name="tf_4040B" pkg="suii_simulation" type="object_tf_publisher.py"
         args="-model S40_40_B">
     </node>
 
     <node name="spawn_urdf_object2" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@'" respawn="false" output="screen"
-    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.4 -y 1 -z 0.9 -R 0 -P 0 -Y 1 -model S40_40_G"/>
+    args="-file $(find suii_simulation)/urdf/F40_40_G.urdf -urdf -x 0.32 -y 1.1 -z 0.5 -R 0 -P 0 -Y 1 -model S40_40_G"/>
     <node name="tf_4040G" pkg="suii_simulation" type="object_tf_publisher.py"
         args="-model S40_40_G">
+    </node>
+
+    <node name="spawn_urdf_object3" pkg="gazebo_ros" type="spawn_model" launch-prefix="bash -c 'sleep $(arg node_start_delay2); $0 $@'" respawn="false" output="screen"
+    args="-file $(find suii_simulation)/urdf/F20_20_B.urdf -urdf -x 2.75 -y 1.57 -z 0.5 -R 0 -P 0 -Y 0.5 -model F20_20_B"/>
+    <node name="tf_2020B" pkg="suii_simulation" type="object_tf_publisher.py"
+        args="-model F20_20_B">
     </node>
 
     <node name="navigation" pkg="suii_navigation" type="manager.py" />

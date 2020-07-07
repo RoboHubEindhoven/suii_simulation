@@ -20,6 +20,6 @@ class TF_broadcaster():
 
 if __name__ == "__main__":
     TF = TF_broadcaster()
-    r = rospy.Rate(5)
+    r = rospy.Rate(1)
     while not rospy.is_shutdown():
         r.sleep()
